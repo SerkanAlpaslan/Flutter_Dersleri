@@ -5,6 +5,153 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  Row dartRowunuOlustur() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          alignment: Alignment.center,
+          color: Colors.amber[100],
+          width: 50,
+          height: 50,
+          child: Text(
+            "D",
+            style: TextStyle(fontSize: 35),
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.amber[200],
+          width: 50,
+          height: 50,
+          child: Text(
+            "D",
+            style: TextStyle(fontSize: 35),
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.amber[400],
+          width: 50,
+          height: 50,
+          child: Text(
+            "D",
+            style: TextStyle(fontSize: 35),
+          ),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.amber[800],
+          width: 50,
+          height: 50,
+          child: Text(
+            "D",
+            style: TextStyle(fontSize: 35),
+          ),
+        )
+      ],
+    );
+  }
+
+  Column dersleriColumunuOlustur() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            color: Colors.purple[100],
+            margin: EdgeInsets.only(top: 15),
+            child: Text(
+              "E",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            color: Colors.purple[200],
+            margin: EdgeInsets.only(top: 15),
+            child: Text(
+              "R",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            color: Colors.purple[400],
+            margin: EdgeInsets.only(top: 15),
+            child: Text(
+              "S",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            color: Colors.purple[600],
+            margin: EdgeInsets.only(top: 15),
+            child: Text(
+              "L",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            margin: EdgeInsets.only(top: 15),
+            color: Colors.purple[700],
+            child: Text(
+              "E",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            margin: EdgeInsets.only(top: 15),
+            color: Colors.purple[800],
+            child: Text(
+              "R",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            alignment: Alignment.center,
+            height: 50,
+            width: 50,
+            color: Colors.purple[900],
+            margin: EdgeInsets.only(top: 15),
+            child: Text(
+              "İ",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   String _img1 =
       "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80";
   @override
@@ -23,62 +170,179 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.red,
         ),
         body: Container(
-          height: 400,
-          color: Colors.purple[100],
-          child: Column(// Dikey SIRALAYAN COLUM yatay SIRALAYAN ROW
-            // mainAxisSize: MainAxisSize.max,
-             mainAxisAlignment: MainAxisAlignment
-            //     .center, //YATAY=> elemanları ortalar. //spacce around bnları eşit bir şekilde dağıtır. filan flana.
-            // crossAxisAlignment: CrossAxisAlignment.center,//DİKEY=> ortalar filan
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.fingerprint_sharp,
-                size: 70,
-                color: Colors.red,
-              ),
-              Icon(
-                Icons.fingerprint_sharp,
-                size: 70,
-                color: Colors.blue,
-              ),
-              Icon(
-                Icons.fingerprint_sharp,
-                size: 70,
-                color: Colors.yellow,
-              ),
-              Icon(
-                Icons.fingerprint_sharp,
-                size: 70,
-                color: Colors.purple,
-              )
+              dartRowunuOlustur(),
+              Expanded(child: dersleriColumunuOlustur()),
             ],
           ),
         ),
 
-        /*//bir kutu filan olmadığı için scaffold içerisidneki ibütün boş yherlere yayılıyor
-          color: Colors.blue,
-          width: 300,
-          height: 300,
-          child: Text(
-            "Serkan alpasla" * 2,
-            textAlign: TextAlign.center,
-          ), //kırmzıı renk bunun kadar yer kaplar
-          margin: EdgeInsets.fromLTRB(10, 25, 35,
-              45), //etrafıyla ne kadar boş kalacağını vs. düzenleyebilioruz
-          padding: EdgeInsets.all(25),
-          constraints: BoxConstraints(
-              maxHeight: 200, minHeight: 200, maxWidth: 200, minWidth: 200),
-        )*/
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             debugPrint("Tıklandı");
           },
-          child: Icon(Icons.add_a_photo_sharp,
+          child: Icon(Icons.add_alert,
               color: Colors
                   .white), //child widgetimizin içine koyacağımzı elemaın temsil ediyor
           backgroundColor: Colors.red,
+        ), //Scaffold yapısı appbar, alltan menü flaan filan heğinni içine alan şeyin genel adı. Düzenli bir şekilde bunları yapmamaıza yaryırpyp.
+      ),
+    );
+  }
+
+  List<Widget> get sorunlu_container {
+    return [
+      Container(
+        width: 75,
+        height: 75,
+        color: Colors.amber,
+      ),
+      Container(
+        width: 75,
+        height: 75,
+        color: Colors.black,
+      ),
+      Container(
+        width: 75,
+        height: 75,
+        color: Colors.blue,
+      ),
+      Container(
+        width: 75,
+        height: 75,
+        color: Colors.red,
+      ),
+      Container(
+        width: 75,
+        height: 75,
+        color: Colors.blue,
+      ),
+    ];
+  }
+
+  List<Widget> get flexible_container {
+    return [
+      Flexible(
+        child: Container(
+          width: 170,
+          height: 170,
+          color: Colors.amber,
         ),
-      ), //Scaffold yapısı appbar, alltan menü flaan filan heğinni içine alan şeyin genel adı. Düzenli bir şekilde bunları yapmamaıza yaryırpyp.
+      ),
+      Flexible(
+        //ÖLÇÜYE GÖRE KÜÇÜLT SADECE EN ÜST DEĞERE GELİNCE DUR. EXPANDEDDE DURMAK YOKTU BUNDA VAR
+
+        child: Container(
+          width: 170,
+          height: 170,
+          color: Colors.black,
+        ),
+      ),
+    ];
+  }
+
+  List<Widget> get expanded_container {
+    return [
+      Expanded(
+        //EXPANDED ŞU DEMEK sen genişlik ve yükseklliği boşver. boş alana yerleştir. Yazdığımız yükseklik filan boşa gider yani.
+        flex:
+            2, //kısaca kat sayı demek. Evet boşluğa yayıl ama verdiğim değere göre yay dersen: mesela birine 2 dersen diğerlerinin iiki katı büyklikte yer almış olacak.
+        child: Container(
+          width: 75,
+          height: 75,
+          color: Colors.amber,
+        ),
+      ),
+      Expanded(
+        child: Container(
+          width: 75,
+          height: 75,
+          color: Colors.black,
+        ),
+      ),
+      Expanded(
+        child: Container(
+          width: 75,
+          height: 75,
+          color: Colors.blue,
+        ),
+      ),
+      Expanded(
+        child: Container(
+          width: 75,
+          height: 75,
+          color: Colors.red,
+        ),
+      ),
+      Expanded(
+        child: Container(
+          width: 75,
+          height: 75,
+          color: Colors.blue,
+        ),
+      ),
+    ];
+  }
+
+  Container row_column_ornekler() {
+    return Container(
+      //height: 400,
+      color: Colors.purple[100],
+      child: Column(
+        // Dikey SIRALAYAN COLUM yatay SIRALAYAN ROW
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment
+            .spaceAround, //.center, //YATAY=> elemanları ortalar. //spacce around bnları eşit bir şekilde dağıtır. filan flana.
+        crossAxisAlignment: CrossAxisAlignment.start, //DİKEY=> ortalar filan
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text("E"),
+              Text("M"),
+              Text("R"),
+              Text("E"),
+            ],
+          ),
+          Icon(
+            Icons.fingerprint_sharp,
+            size: 70,
+            color: Colors.red,
+          ),
+          Icon(
+            Icons.fingerprint_sharp,
+            size: 70,
+            color: Colors.blue,
+          ),
+          Icon(
+            Icons.fingerprint_sharp,
+            size: 70,
+            color: Colors.yellow,
+          ),
+          Icon(
+            Icons.fingerprint_sharp,
+            size: 70,
+            color: Colors.purple,
+            /*//bir kutu filan olmadığı için scaffold içerisidneki ibütün boş yherlere yayılıyor
+        color: Colors.blue,
+        width: 300,
+        height: 300,
+        child: Text(
+          "Serkan alpasla" * 2,
+          textAlign: TextAlign.center,
+        ), //kırmzıı renk bunun kadar yer kaplar
+        margin: EdgeInsets.fromLTRB(10, 25, 35,
+            45), //etrafıyla ne kadar boş kalacağını vs. düzenleyebilioruz
+        padding: EdgeInsets.all(25),
+        constraints: BoxConstraints(
+            maxHeight: 200, minHeight: 200, maxWidth: 200, minWidth: 200),
+      )*/
+          )
+        ],
+      ),
     );
   }
 
