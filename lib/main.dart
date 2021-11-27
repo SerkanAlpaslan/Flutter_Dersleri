@@ -5,151 +5,53 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  Container containerOlustur(String harf, Color renk) {
+    return Container(
+      alignment: Alignment.center,
+      height: 50,
+      width: 50,
+      color: renk,
+      margin: EdgeInsets.only(top: 15),
+      child: Text(
+        harf,
+        style: TextStyle(fontSize: 35),
+      ),
+    );
+  }
+
   Row dartRowunuOlustur() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          alignment: Alignment.center,
-          color: Colors.amber[100],
-          width: 50,
-          height: 50,
-          child: Text(
-            "D",
-            style: TextStyle(fontSize: 35),
-          ),
-        ),
-        Container(
-          alignment: Alignment.center,
-          color: Colors.amber[200],
-          width: 50,
-          height: 50,
-          child: Text(
-            "D",
-            style: TextStyle(fontSize: 35),
-          ),
-        ),
-        Container(
-          alignment: Alignment.center,
-          color: Colors.amber[400],
-          width: 50,
-          height: 50,
-          child: Text(
-            "D",
-            style: TextStyle(fontSize: 35),
-          ),
-        ),
-        Container(
-          alignment: Alignment.center,
-          color: Colors.amber[800],
-          width: 50,
-          height: 50,
-          child: Text(
-            "D",
-            style: TextStyle(fontSize: 35),
-          ),
-        )
+        containerOlustur("D", Colors.amber[100]),
+        containerOlustur("e", Colors.amber[200]),
+        containerOlustur("r", Colors.amber[300]),
+        containerOlustur("s", Colors.amber),
       ],
     );
   }
 
   Column dersleriColumunuOlustur() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            color: Colors.purple[100],
-            margin: EdgeInsets.only(top: 15),
-            child: Text(
-              "E",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            color: Colors.purple[200],
-            margin: EdgeInsets.only(top: 15),
-            child: Text(
-              "R",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            color: Colors.purple[400],
-            margin: EdgeInsets.only(top: 15),
-            child: Text(
-              "S",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            color: Colors.purple[600],
-            margin: EdgeInsets.only(top: 15),
-            child: Text(
-              "L",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            margin: EdgeInsets.only(top: 15),
-            color: Colors.purple[700],
-            child: Text(
-              "E",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            margin: EdgeInsets.only(top: 15),
-            color: Colors.purple[800],
-            child: Text(
-              "R",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.center,
-            height: 50,
-            width: 50,
-            color: Colors.purple[900],
-            margin: EdgeInsets.only(top: 15),
-            child: Text(
-              "İ",
-              style: TextStyle(fontSize: 35),
-            ),
-          ),
-        ),
-      ],
-    );
+    return Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+      Expanded(
+        child: containerOlustur("D", Colors.amber),
+      ),
+      Expanded(
+        child: containerOlustur("D", Colors.amber),
+      ),
+      Expanded(
+        child: containerOlustur("D", Colors.amber),
+      ),
+      Expanded(
+        child: containerOlustur("D", Colors.amber),
+      ),
+      Expanded(
+        child: containerOlustur("D", Colors.amber),
+      ),
+      Expanded(
+        child: containerOlustur("D", Colors.amber),
+      ),
+    ]);
   }
 
   String _img1 =
@@ -170,6 +72,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.red,
         ),
         body: Container(
+          color: Colors.grey[100],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
